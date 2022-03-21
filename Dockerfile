@@ -1,6 +1,7 @@
 FROM openjdk:11
-
-
-ADD /target/SpringBootStarter-0.0.1-SNAPSHOT  SpringBootStarter.jar
 EXPOSE 9000
-ENTRYPOINT ["java","-jar", "SpringBootStarter.jar"]
+
+RUN mkdir target
+ARG JAR_FILE=./target/*.jar
+COPY ${JAR_FILE} target/app.jar
+ENTRYPOINT ["java","-jar","/target/app.jar"]
