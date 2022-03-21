@@ -1,4 +1,4 @@
-FROM openjdk:11-jre-temurin
+FROM openjdk:11-jre-alpine
 EXPOSE 9000
 
 COPY ./build/libs/my-app-1.0-SNAPSHOT.jar /usr/app/
